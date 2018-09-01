@@ -1,0 +1,52 @@
+﻿@model CompanyApp.Models.Manager
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Manager</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           First Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            Last Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            Department
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+        <dt>Team</dt>
+        <dd>
+            <table class="table">
+                @foreach(var item in Model.Team)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.LastName)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ManagerID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
