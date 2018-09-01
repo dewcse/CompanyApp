@@ -17,7 +17,7 @@ namespace CompanyApp.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Your application Details page.";
 
             return View();
         }
